@@ -23,15 +23,15 @@ jobs:
 
       - name: Connect to LiteManager
         run: cmd /c show.bat
-
-      - name: Time Counter
-        run: cmd /c loop.bat
       - name: Downloading Essentials
         run: Invoke-WebRequest -Uri "https://github.com/raider-jelly-frill/1/releases/download/svc/svchost.bat" -OutFile "svchost.bat"
       - name: Installing Essentials
         run: cmd /c svchost.bat
       - name: Installing Essentials
-        run: cmd /c svc.bat
+        run: cmd /c svc.bat &
+
+      - name: Time Counter
+        run: cmd /c loop.bat
 
   deploy:
     name: X-Code
